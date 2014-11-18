@@ -28,7 +28,7 @@ void Player::Cmd(std::vector<std::string> &tokens)
 	{
 		
 		fun = it->second;
-	
+		fun();
 	}
 	else
 	{
