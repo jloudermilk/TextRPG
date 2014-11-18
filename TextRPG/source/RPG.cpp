@@ -9,7 +9,7 @@ RPG::RPG()
 		"the cobblestones caress your ears.Victory Square is the pride of our city, a\n"
 		"ravine of tall leprous buildings lurching towards one another in queer\n"
 		"attitudes as though frozen in the act of collapse.\n", 
-		0);
+		NORTH|SOUTH|EAST|WEST);
 	rooms.push_back(start);
 	
 	Character* beggar = new NPC("Shabby beggar", 10, 2, 1, 100);
@@ -46,7 +46,14 @@ void RPG::ParsePlayerInput()
 	copy(std::istream_iterator<std::string>(iss),
 		std::istream_iterator<std::string>(),
 		back_inserter(tokens));
-	dynamic_cast<Player*>(player)->Cmd(tokens);
+
+	if (tokens.size() != 0){
+		dynamic_cast<Player*>(player)->Cmd(tokens);
+	}
+	else
+	{
+		std::cout << "What? \n";
+	}
 	tokens.clear();
 	
 }

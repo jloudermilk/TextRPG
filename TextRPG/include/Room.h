@@ -1,9 +1,11 @@
 #pragma once
 #include <vector>
 #include "Character.h"
+#include <iostream>
+#include <string>
 enum Exits
 {
-		
+		NOEXIT		= 0x00,		//0x00000000
 		NORTH		= 0x01,		//0x00000001
 		SOUTH		= 0x02,		//0x00000010
 		EAST		= 0x04,		//0x00000100
@@ -12,6 +14,7 @@ enum Exits
 		NORTHWEST	= 0x20,		//0x00100000
 		SOUTHEAST	= 0x40,		//0x01000000
 		SOUTHWEST	= 0x80		//0x10000000
+
 		
 };
 

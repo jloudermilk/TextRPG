@@ -20,6 +20,7 @@ Player::Player(char* a_name, int a_hp, int a_attack, int a_defense)
 
 void Player::Cmd(std::vector<std::string> &tokens)
 {
+	
 	std::string str = tokens[0];
 	std::map<std::string, void (Player::*)()>::iterator it = playerCommands.find(str);
 
@@ -27,8 +28,7 @@ void Player::Cmd(std::vector<std::string> &tokens)
 	if (it != playerCommands.end())
 	{
 		
-		fun = it->second;
-		fun();
+		(this->*it->second)();
 	}
 	else
 	{
