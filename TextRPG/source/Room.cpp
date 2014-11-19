@@ -14,7 +14,9 @@ Room::Room(char* a_roomDesc, unsigned int a_exits)
 	roomDesc = a_roomDesc;
 	exits = a_exits;
 }
-
+void Room::receive(std::string message) 
+{
+}
 void Room::Display()
 {
 
@@ -45,5 +47,12 @@ void Room::Display()
 	else{
 		std::cout << "There are exits to the" << visableExits;
 	}
+
+	std::cout << std::endl << std::endl;
+
+	std::string visableCharacters;
+	
+	std::cout << visableCharacters;
+	std::cout << std::endl << std::endl;
 
 }

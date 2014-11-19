@@ -83,18 +83,20 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Character.h" />
-    <ClInclude Include="include\NPC.h" />
-    <ClInclude Include="include\Player.h" />
+    <ClInclude Include="include\Component.h" />
+    <ClInclude Include="include\GameObject.h" />
+    <ClInclude Include="include\Command.h" />
     <ClInclude Include="include\Room.h" />
     <ClInclude Include="include\RPG.h" />
     <ClInclude Include="include\stdafx.h" />
     <ClInclude Include="include\targetver.h" />
+    <ClInclude Include="include\LookCommand.h" />
+    <ClInclude Include="include\Race.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\Character.cpp" />
-    <ClCompile Include="source\NPC.cpp" />
-    <ClCompile Include="source\Player.cpp" />
+    <ClCompile Include="source\LookCommand.cpp" />
+    <ClCompile Include="source\Race.cpp" />
+    <ClCompile Include="source\GameObject.cpp" />
     <ClCompile Include="source\Room.cpp" />
     <ClCompile Include="source\RPG.cpp" />
     <ClCompile Include="source\stdafx.cpp" />

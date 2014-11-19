@@ -1,6 +1,7 @@
-#pragma once
+#ifndef _ROOM_H_
+#define _ROOM_H_
 #include <vector>
-#include "Character.h"
+#include "Component.h"
 #include <iostream>
 #include <string>
 enum Exits
@@ -18,18 +19,21 @@ enum Exits
 		
 };
 
-class Room
+class Room:
+	public Component
 {
 public:
 	Room();
 	Room(char* a_roomDesc, unsigned int a_exits);
 
 	~Room();
-
+//	void Add(Character& c);
+//	void Remove(Character& c);
+	void receive(std::string message);
 	void Display();
 	unsigned int exits;
 	char* roomDesc;
 	
-	std::vector<Character*> inRoom;
+//	std::vector<Character*> inRoom;
 };
-
+#endif //_ROOM_H_

@@ -1,5 +1,5 @@
 #include "RPG.h"
-
+#include "Race.h"
 
 RPG::RPG()
 {
@@ -12,12 +12,15 @@ RPG::RPG()
 		NORTH|SOUTH|EAST|WEST);
 	rooms.push_back(start);
 	
-	Character* beggar = new NPC("Shabby beggar", 10, 2, 1, 100);
-	player = new Player("Nimdraug", 100, 4, 1);
-	dynamic_cast<Player*>(player)->currentRoom = start;
+	//Character* beggar = new NPC("Shabby beggar", 10, 2, 1, 100);
+//	player = new Player("Nimdraug", 100, 4, 1);
+	
 
-	start->inRoom.push_back(beggar);
-	start->inRoom.push_back(player);
+	//start->Add(*beggar);
+//	start->Add(*player);
+
+	player = new GameObject();
+	player->AddComponent(new Race());
 
 	
 }
@@ -29,7 +32,7 @@ RPG::~RPG()
 
 void RPG::Run()
 {
-	dynamic_cast<Player*>(player)->Look();
+	//dynamic_cast<Player*>(player)->Look();
 	do
 	{
 		std::getline(std::cin, playerInput);
@@ -37,8 +40,6 @@ void RPG::Run()
 
 	} while (!gameOver);
 }
-void RPG::DisplayRoom(Character* a){}
-void RPG::Combat(Character* a, Character* b){}
 void RPG::MoveRoom(char*){}
 void RPG::ParsePlayerInput()
 {
@@ -48,7 +49,7 @@ void RPG::ParsePlayerInput()
 		back_inserter(tokens));
 
 	if (tokens.size() != 0){
-		dynamic_cast<Player*>(player)->Cmd(tokens);
+		player->Send(tokens[0]);
 	}
 	else
 	{

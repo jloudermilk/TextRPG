@@ -1,8 +1,7 @@
-#pragma once
+#ifndef _RPG_H_
+#define _RPG_H_
 #include "Room.h"
-#include "Character.h"
-#include "Player.h"
-#include "NPC.h"
+#include "GameObject.h"
 #include <vector>
 #include <iostream>
 #include <string>
@@ -18,20 +17,18 @@ public:
 	~RPG();
 
 	void Run();
-	void DisplayRoom(Character* a);
-	void Combat(Character* a, Character* b);
 	void MoveRoom(char*);
 	void ParsePlayerInput();
 
 
 	bool gameOver;
 
-	Character* player;
 	std::vector<Room*> rooms;
 	std::vector<std::string> tokens;
 	std::string playerInput;
+	GameObject * player;
 	
 
 
 };
-
+#endif //_RPG_H_
