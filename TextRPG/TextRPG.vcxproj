@@ -94,6 +94,7 @@
     <ClInclude Include="include\Race.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\Command.cpp" />
     <ClCompile Include="source\LookCommand.cpp" />
     <ClCompile Include="source\Race.cpp" />
     <ClCompile Include="source\GameObject.cpp" />
