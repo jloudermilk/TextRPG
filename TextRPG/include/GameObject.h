@@ -2,6 +2,9 @@
 #define _GAMEOBJECT_H_
 #include <vector>
 #include "Component.h"
+
+class Component;
+
 class GameObject
 {
 public:
